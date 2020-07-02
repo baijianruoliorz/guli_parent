@@ -25,7 +25,7 @@ import lombok.experimental.Accessors;
 @Accessors(chain = true)
 @TableName("t_order")
 @ApiModel(value="Order对象", description="订单")
-public class Order implements Serializable {
+ public class Order implements Serializable {
 
     private static final long serialVersionUID = 1L;
 

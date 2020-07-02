@@ -28,7 +28,7 @@ public class EduChapterController {
 
 
 
-    //课程大纲列表根据id进行查询
+     //课程大纲列表根据id进行查询
     @GetMapping("getChapterVideo/{courseId}")
     public R getChapterVideo(@PathVariable String courseId) {
         List<ChapterVo> list = chapterService.getChapterVideoByCourseId(courseId);
