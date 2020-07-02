@@ -83,4 +83,5 @@ public class TokenWebSecurityConfig extends WebSecurityConfigurerAdapter {
                 "/swagger-resources/**", "/webjars/**", "/v2/**", "/swagger-ui.html/**"
                );
     }
+
 }

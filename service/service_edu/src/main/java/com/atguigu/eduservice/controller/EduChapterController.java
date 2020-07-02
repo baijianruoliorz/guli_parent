@@ -8,6 +8,7 @@ import com.atguigu.eduservice.service.EduChapterService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -24,6 +25,8 @@ import java.util.List;
 public class EduChapterController {
     @Autowired
     private EduChapterService chapterService;
+
+
 
     //课程大纲列表根据id进行查询
     @GetMapping("getChapterVideo/{courseId}")
@@ -68,5 +71,7 @@ public class EduChapterController {
         }
 
     }
+
+
 }
 

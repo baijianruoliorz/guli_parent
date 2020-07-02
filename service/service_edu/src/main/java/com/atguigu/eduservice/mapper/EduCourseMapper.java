@@ -25,4 +25,5 @@ public interface EduCourseMapper extends BaseMapper<EduCourse> {
 
     //根据课程id查询课程信息，这里alt+enter就可以直接在xml创建方法啦
     CourseWebVo getBaseCourseInfo(String courseId);
+
 }

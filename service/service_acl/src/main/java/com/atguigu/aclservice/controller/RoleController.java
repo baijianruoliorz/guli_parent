@@ -2,6 +2,7 @@ package com.atguigu.aclservice.controller;
 
 
 import com.atguigu.aclservice.entity.Role;
+import com.atguigu.aclservice.service.PermissionService;
 import com.atguigu.aclservice.service.RoleService;
 import com.atguigu.commonutils.R;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
@@ -45,7 +46,9 @@ public class RoleController {
             wrapper.like("role_name",role.getRoleName());
         }
         roleService.page(pageParam,wrapper);
+
         return R.ok().data("items", pageParam.getRecords()).data("total", pageParam.getTotal());
+
     }
 
     @ApiOperation(value = "获取角色")
@@ -81,6 +84,8 @@ public class RoleController {
     public R batchRemove(@RequestBody List<String> idList) {
         roleService.removeByIds(idList);
         return R.ok();
+
+
     }
 }
 

@@ -26,6 +26,8 @@ public class R {
     @ApiModelProperty(value = "返回数据")
     private Map<String, Object> data = new HashMap<String, Object>();
 
+    int i=3;
+
     //把构造方法私有
     private R() {
     }
@@ -68,8 +70,8 @@ public class R {
         this.data.put(key, value);
         return this;
     }
-
-    public R data(Map<String, Object> map) {
+   //封装map方法
+    public  R data(Map<String, Object> map) {
         this.setData(map);
         return this;
     }

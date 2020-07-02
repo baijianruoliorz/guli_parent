@@ -29,6 +29,10 @@ public class EduConfig {
      */
     @Bean
     public PaginationInterceptor paginationInterceptor() {
+
+
         return new PaginationInterceptor();
     }
+
+
 }

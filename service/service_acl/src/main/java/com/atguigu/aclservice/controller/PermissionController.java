@@ -15,8 +15,10 @@ import java.util.List;
  * 权限 菜单管理
  * </p>
  *
+ *
+ *
  * @author testjava
- * @since 2020-01-12
+ * @since 2020-05-31
  */
 @RestController
 @RequestMapping("/admin/acl/permission")
@@ -24,7 +26,7 @@ import java.util.List;
 public class PermissionController {
 
     @Autowired
-    private PermissionService permissionService;
+    private  PermissionService permissionService;
 
     //获取全部菜单
     @ApiOperation(value = "查询所有菜单")
