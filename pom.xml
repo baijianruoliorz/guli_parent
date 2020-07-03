@@ -208,6 +208,7 @@
     </dependencyManagement>
 
     <build>
+<!--        这个在打包的时候要替换哦-->
         <plugins>
             <plugin>
                 <groupId>org.springframework.boot</groupId>
