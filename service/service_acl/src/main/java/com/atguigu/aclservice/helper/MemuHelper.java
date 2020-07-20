@@ -58,7 +58,9 @@ public class MemuHelper {
 
                     List<Permission> threeMeunList = two.getChildren();
                     for(Permission three :threeMeunList) {
-                        if(StringUtils.isEmpty(three.getPath())) continue;
+                        if(StringUtils.isEmpty(three.getPath())) {
+                            continue;
+                        }
 
                         JSONObject threeMeun = new JSONObject();
                         threeMeun.put("path", three.getPath());

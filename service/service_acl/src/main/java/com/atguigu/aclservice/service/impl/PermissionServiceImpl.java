@@ -91,7 +91,9 @@ public class PermissionServiceImpl extends ServiceImpl<PermissionMapper, Permiss
 
         List<RolePermission> rolePermissionList = new ArrayList<>();
         for(String permissionId : permissionIds) {
-            if(StringUtils.isEmpty(permissionId)) continue;
+            if(StringUtils.isEmpty(permissionId)) {
+                continue;
+            }
       
             RolePermission rolePermission = new RolePermission();
             rolePermission.setRoleId(roleId);

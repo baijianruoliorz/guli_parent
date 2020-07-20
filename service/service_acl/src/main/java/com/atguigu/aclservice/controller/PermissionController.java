@@ -66,9 +66,10 @@ public class PermissionController {
         return R.ok();
     }
 
+
     @ApiOperation(value = "修改菜单")
     @PutMapping("update")
-    public R updateById(@RequestBody Permission permission) {
+    public R updataById(@RequestBody Permission permission){
         permissionService.updateById(permission);
         return R.ok();
     }

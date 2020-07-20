@@ -31,7 +31,7 @@ public class OssServiceImpl implements OssService {
             // 创建OSSClient实例。
             OSS ossClient = new OSSClientBuilder().build(endpoint, accessKeyId, accessKeySecret);
 
-// 上传文件流。
+            // 上传文件流。
             InputStream inputStream = file.getInputStream();
             //获取文件名称
             String originalFilename = file.getOriginalFilename();

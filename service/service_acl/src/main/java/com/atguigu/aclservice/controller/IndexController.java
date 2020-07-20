@@ -5,6 +5,7 @@ import com.atguigu.aclservice.entity.Permission;
 import com.atguigu.aclservice.service.IndexService;
 import com.atguigu.aclservice.service.PermissionService;
 import com.atguigu.commonutils.R;
+import com.sun.javafx.collections.MappingChange;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.context.SecurityContextHolder;
@@ -24,21 +25,23 @@ public class IndexController {
     /**
      * 根据token获取用户信息
      */
+
     @GetMapping("info")
     public R info(){
-        //获取当前登录用户用户名
-        String username = SecurityContextHolder.getContext().getAuthentication().getName();
-        Map<String, Object> userInfo = indexService.getUserInfo(username);
+        String username=SecurityContextHolder.getContext().getAuthentication().getName();
+        Map<String,Object> userInfo=indexService.getUserInfo(username);
         return R.ok().data(userInfo);
     }
 
     /**
      * 获取菜单
+     *
      * @return
      */
+
     @GetMapping("menu")
-    public R getMenu(){
-        //获取当前登录用户用户名
+    public R getMenu() {
+//        当前登录的用户名
         String username = SecurityContextHolder.getContext().getAuthentication().getName();
         List<JSONObject> permissionList = indexService.getMenu(username);
         return R.ok().data("permissionList", permissionList);
