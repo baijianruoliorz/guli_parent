@@ -30,12 +30,19 @@ public class UcenterMemberController {
 
   //登陆的方法
     //最原始方法：根据用户民密码到数据库中查,一定要用post提交哦，最开始用get忘记了..导致错了很久
+//    @PostMapping("login")
+//    public  R loginUser(@RequestBody UcenterMember member){
+//        //调用Service中的方法进行登录
+//        //登录之后返回token,token根据jwt生产
+//      String token=  memberService.login(member);
+//      return R.ok().data("token",token);
+//    }
     @PostMapping("login")
-    public  R loginUser(@RequestBody UcenterMember member){
-        //调用Service中的方法进行登录
-        //登录之后返回token,token根据jwt生产
-      String token=  memberService.login(member);
-      return R.ok().data("token",token);
+    public R loginUser(@RequestBody UcenterMember member){
+//        调用service中的方法进行登录
+//        登录之后返回token token由jwt生产
+        String token=memberService.login(member);
+        return R.ok().data("token",token);
     }
 
 
