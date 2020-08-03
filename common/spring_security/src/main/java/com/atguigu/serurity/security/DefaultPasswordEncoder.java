@@ -26,7 +26,7 @@ public class DefaultPasswordEncoder implements PasswordEncoder {
     public DefaultPasswordEncoder(int strength) {
 
     }
-
+//密码处理
     public String encode(CharSequence rawPassword) {
         return MD5.encrypt(rawPassword.toString());
     }

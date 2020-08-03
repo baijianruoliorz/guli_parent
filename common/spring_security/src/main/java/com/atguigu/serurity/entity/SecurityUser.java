@@ -20,7 +20,7 @@ import java.util.List;
  * @since 2019-11-08
  */
 @Data
-@Slf4j
+@Slf4j                             //这个借口是官方写的
 public class SecurityUser implements UserDetails {
 
     //当前登录用户

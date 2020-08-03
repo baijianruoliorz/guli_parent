@@ -29,7 +29,7 @@ import org.springframework.security.core.userdetails.UserDetailsService;
 @EnableWebSecurity
 @EnableGlobalMethodSecurity(prePostEnabled = true)
 public class TokenWebSecurityConfig extends WebSecurityConfigurerAdapter {
-
+//这个类是自定义查询数据库的类
     private UserDetailsService userDetailsService;
     private TokenManager tokenManager;
     private DefaultPasswordEncoder defaultPasswordEncoder;
@@ -56,7 +56,7 @@ public class TokenWebSecurityConfig extends WebSecurityConfigurerAdapter {
                 .and().csrf().disable()
                 .authorizeRequests()
                 .anyRequest().authenticated()
-                .and().logout().logoutUrl("/admin/acl/index/logout")
+                .and().logout().logoutUrl("/admin/acl/index/logout")  //这个地址是随便写的 甚至可以不存在~
                 .addLogoutHandler(new TokenLogoutHandler(tokenManager,redisTemplate)).and()
                 .addFilter(new TokenLoginFilter(authenticationManager(), tokenManager, redisTemplate))
                 .addFilter(new TokenAuthenticationFilter(authenticationManager(), tokenManager, redisTemplate)).httpBasic();

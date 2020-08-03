@@ -63,6 +63,8 @@ public class TokenAuthenticationFilter extends BasicAuthenticationFilter {
         chain.doFilter(req, res);
     }
 
+
+//    授权过滤器
     private UsernamePasswordAuthenticationToken getAuthentication(HttpServletRequest request) {
         // token置于header里
         String token = request.getHeader("token");
