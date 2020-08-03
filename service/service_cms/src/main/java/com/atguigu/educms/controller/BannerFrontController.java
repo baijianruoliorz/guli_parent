@@ -20,6 +20,7 @@ import java.util.List;
  * @author testjava
  * @since 2020-05-30
  */
+//引入依赖 使用Redis
 @RestController
 @RequestMapping("/educms/bannerfront")
 @CrossOrigin

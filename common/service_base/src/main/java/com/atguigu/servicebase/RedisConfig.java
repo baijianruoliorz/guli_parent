@@ -23,7 +23,7 @@ import java.time.Duration;
 * author liqiqiorz
 *   date:2020.05.30
 * */
-//表示开启缓存注解
+//表示开启缓存注解,第二步
 @EnableCaching
 //表示是配置类
 @Configuration                    //固定父类

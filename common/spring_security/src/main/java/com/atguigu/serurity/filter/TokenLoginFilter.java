@@ -39,7 +39,7 @@ public class TokenLoginFilter extends UsernamePasswordAuthenticationFilter {
         this.authenticationManager = authenticationManager;
         this.tokenManager = tokenManager;
         this.redisTemplate = redisTemplate;
-        this.setPostOnly(false);                                         //登录接口
+        this.setPostOnly(false);                                         //登录接口,也是随便写的,登录是官方帮我们做到
         this.setRequiresAuthenticationRequestMatcher(new AntPathRequestMatcher("/admin/acl/login","POST"));
     }
 

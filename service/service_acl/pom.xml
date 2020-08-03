@@ -12,7 +12,7 @@
     <artifactId>service_acl</artifactId>
 
     <dependencies>
-<!--        整合模块-->
+<!--        整合模块,引入spring security依赖-->
         <dependency>
             <groupId>com.atguigu</groupId>
             <artifactId>spring_security</artifactId>

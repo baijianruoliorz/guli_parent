@@ -49,7 +49,7 @@
             <artifactId>springfox-swagger-ui</artifactId>
             <scope>provided </scope>
         </dependency>
-
+<!--一下是Redis两个依赖 第一步1-->
         <!-- redis -->
         <dependency>
             <groupId>org.springframework.boot</groupId>
