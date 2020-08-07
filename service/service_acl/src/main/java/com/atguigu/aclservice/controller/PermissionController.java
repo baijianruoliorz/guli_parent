@@ -22,7 +22,7 @@ import java.util.List;
  */
 @RestController
 @RequestMapping("/admin/acl/permission")
-//@CrossOrigin
+@CrossOrigin
 public class PermissionController {
 
     @Autowired
