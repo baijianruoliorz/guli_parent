@@ -1,6 +1,8 @@
 package com.atguigu.eduservice.controller;
 
 import com.atguigu.commonutils.R;
+import com.atguigu.eduservice.mapper.EduChapterMapper;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -16,6 +18,8 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping("/eduservice/user")
 @CrossOrigin
 public class EduLoginController {
+
+
     //login方法,根据vue-admin-template里store的user.js,可知登陆要返回token值，所以这里必须有token
     @PostMapping("login")
     public R login() {
