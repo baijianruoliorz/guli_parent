@@ -56,7 +56,7 @@ public class EduTeacherController {
             return R.error();
         }
     }
-
+//default
     //分页+条件查询:1配插件2
     @GetMapping("pageTeacher/{current}/{limit}")
     public R pageListTeacher(@PathVariable long current,

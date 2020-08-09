@@ -32,7 +32,7 @@ public class EduCourseController {
 
 
 
-
+//default
     //课程列表 基本实现
     //TODO  完善条件查询带分页
     @GetMapping
@@ -70,6 +70,8 @@ public class EduCourseController {
        return R.ok().data("publishCourse",coursePublishVo);
     }
     //课程最终发布
+
+//    default
     //修改课程状态
     @PostMapping("publishCourse/{id}")
     public R publishCourse(@PathVariable String id) {
