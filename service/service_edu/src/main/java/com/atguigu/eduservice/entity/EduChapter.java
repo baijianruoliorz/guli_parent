@@ -7,6 +7,11 @@ import java.util.Date;
 import com.baomidou.mybatisplus.annotation.TableField;
 import com.baomidou.mybatisplus.annotation.TableId;
 import java.io.Serializable;
+
+import com.fasterxml.jackson.annotation.JsonAlias;
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.JsonInclude;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import lombok.AllArgsConstructor;
@@ -35,15 +40,17 @@ public class EduChapter implements Serializable {
     @TableId(value = "id", type = IdType.ID_WORKER_STR)
     private String id;
 
+
     @ApiModelProperty(value = "课程ID")
     private String courseId;
-
+    @JsonIgnore
     @ApiModelProperty(value = "章节名称")
     private String title;
 
     @ApiModelProperty(value = "显示排序")
     private Integer sort;
-
+//不返回这个
+    @JsonIgnore
     @ApiModelProperty(value = "创建时间")
     @TableField(fill = FieldFill.INSERT)
     private Date gmtCreate;

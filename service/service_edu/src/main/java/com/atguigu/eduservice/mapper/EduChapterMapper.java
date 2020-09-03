@@ -2,6 +2,9 @@ package com.atguigu.eduservice.mapper;
 
 import com.atguigu.eduservice.entity.EduChapter;
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
+import org.apache.ibatis.annotations.Mapper;
+import org.apache.ibatis.annotations.Param;
+import org.springframework.stereotype.Repository;
 
 /**
  * <p>
@@ -11,6 +14,9 @@ import com.baomidou.mybatisplus.core.mapper.BaseMapper;
  * @author testjava
  * @since 2020-05-29
  */
+@Mapper
+@Repository
 public interface EduChapterMapper extends BaseMapper<EduChapter> {
 
+    int create(EduChapter eduChapter);
 }

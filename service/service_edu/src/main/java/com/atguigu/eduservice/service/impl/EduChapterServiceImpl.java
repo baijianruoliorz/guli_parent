@@ -1,5 +1,6 @@
 package com.atguigu.eduservice.service.impl;
 
+import com.atguigu.commonutils.R;
 import com.atguigu.eduservice.entity.EduChapter;
 import com.atguigu.eduservice.entity.EduVideo;
 import com.atguigu.eduservice.entity.chapter.ChapterVo;
@@ -49,7 +50,8 @@ public class EduChapterServiceImpl extends ServiceImpl<EduChapterMapper, EduChap
 
 
         //创建list集合,用于最终封装数据
-        List<ChapterVo> finalList = new ArrayList<>();
+        List<ChapterVo>
+                finalList = new ArrayList<>();
         //遍历查询章节list集合进行封装
 
         //遍历查询章节list集合
@@ -91,6 +93,25 @@ public class EduChapterServiceImpl extends ServiceImpl<EduChapterMapper, EduChap
     }
 
 
+    public boolean deleteChapters(String chapterId){
+//        查询,如果章节中有小节就不删,反之则删
+//        论条件构造器的使用方式
+        QueryWrapper<EduVideo> wrapper=new QueryWrapper<>();
+         wrapper.eq("chapter_id",chapterId)
+                 .and(i->i.eq("chapter_id",chapterId).ne("price",chapterId))
+                .ge("chapter_id",chapterId);
+        int count = videoService.count(wrapper);
+        if(count>0){
+//            这个貌似可以忽略返回值,抛出异常
+            throw new GuliException(20001,"不存在小节,不可删除");
+
+        }else {
+            return true;
+
+        }
+
+    }
+
     //删除章节的方法
     @Override
     public boolean deleteChapter(String chapterId) {
@@ -107,6 +128,7 @@ public class EduChapterServiceImpl extends ServiceImpl<EduChapterMapper, EduChap
         } else {
             //删除章节
             int result = baseMapper.deleteById(chapterId);
+
             //成功的话就是true啦
             return result > 0;
         }
@@ -117,6 +139,8 @@ public class EduChapterServiceImpl extends ServiceImpl<EduChapterMapper, EduChap
     public void removeChapterByCourseId(String courseId) {
         QueryWrapper<EduChapter> wrapper = new QueryWrapper<>();
         wrapper.eq("course_id", courseId);
+
         baseMapper.delete(wrapper);
+
     }
 }

@@ -22,7 +22,7 @@ import lombok.experimental.Accessors;
  * @since 2020-05-29
  */
 @Data
-@EqualsAndHashCode(callSuper = false)
+@EqualsAndHashCode(callSuper = false)   //这个最好加上...
 @Accessors(chain = true)
 @ApiModel(value="EduVideo对象", description="课程视频")
 public class EduVideo implements Serializable {
