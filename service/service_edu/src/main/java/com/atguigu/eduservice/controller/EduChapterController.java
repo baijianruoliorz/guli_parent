@@ -110,6 +110,7 @@ public class EduChapterController {
  @GetMapping("/test/insertChapter")
     public R insertTest(EduChapter chapter){
      int i = eduChapterMapper.create(chapter);
+    // int insert = eduChapterMapper.insert(chapter); //推荐这种,不需要写ID,会自动生成哒
      System.out.println(i);
      return R.ok();
  }

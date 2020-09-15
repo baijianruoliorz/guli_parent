@@ -12,7 +12,7 @@
     <artifactId>service_edu</artifactId>
 
    <dependencies>
-<!--      easuexcel依赖-->
+<!--      easyexcel依赖-->
        <dependency>
            <groupId>com.alibaba</groupId>
            <artifactId>easyexcel</artifactId>

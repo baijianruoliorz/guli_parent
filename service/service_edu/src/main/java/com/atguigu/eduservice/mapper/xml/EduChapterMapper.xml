@@ -6,6 +6,6 @@
 <!--    总结一下成功经验,如果是这种方法的格式的话,就是表格提交,然后下面也不需要映射,mp帮你做了,但是id不能省略-->
 <!--    得随便写一下ID-->
     <insert id="create">
-        insert into edu_chapter(id,course_id,title) values (11111,#{courseId},#{title})
+        insert into edu_chapter(id,course_id,title) values (44,#{courseId},#{title})
     </insert>
 </mapper>
